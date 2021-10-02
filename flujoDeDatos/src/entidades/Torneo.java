@@ -20,7 +20,7 @@ public class Torneo {
 
     @Override
     public String toString() {
-        return "Torneo{" + "nombre=" + nombre + ", numeroDeEquipos=" + numeroDeEquipos + ", numeroTotalJugadores=" + numeroTotalJugadores + ", categoriaJuvenil=" + categoriaJuvenil + ", categoriaMayores=" + categoriaMayores + '}';
+        return nombre + "%" + numeroDeEquipos + "%" + numeroTotalJugadores + "%" + categoriaJuvenil.getNombre() + "%" + categoriaMayores.getNombre();
     }
 
     public String getNombre() {

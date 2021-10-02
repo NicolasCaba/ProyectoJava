@@ -22,7 +22,13 @@ public class CategoriaMayores {
 
     @Override
     public String toString() {
-        return "CategoriaMayores{" + "nombre=" + nombre + ", numeroDeEquipos=" + numeroDeEquipos + ", numeroTotalJugadores=" + numeroTotalJugadores + ", rangoEdad=" + rangoEdad + ", equipos=" + equipos + '}';
+        String sEquipos = "$";
+        for(Equipo e: equipos){
+            sEquipos += e.getNombre() + "/";
+        }
+        sEquipos += "$";
+        
+        return nombre + "%" + numeroDeEquipos + "%" + numeroTotalJugadores + "%" + rangoEdad + "%" + sEquipos;
     }
 
     public String getNombre() {

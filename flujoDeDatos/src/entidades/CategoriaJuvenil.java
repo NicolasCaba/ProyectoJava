@@ -22,9 +22,15 @@ public class CategoriaJuvenil {
 
     @Override
     public String toString() {
-        return "CategoriaJuvenil{" + "nombre=" + nombre + ", numeroDeEquipos=" + numeroDeEquipos + ", numeroTotalJugadores=" + numeroTotalJugadores + ", rangoEdad=" + rangoEdad + ", equipos=" + equipos + '}';
+        String sEquipos = "$";
+        for(Equipo e: equipos){
+            sEquipos += e.getNombre() + "/";
+        }
+        sEquipos += "$";
+        
+        return nombre + "%" + numeroDeEquipos + "%" + numeroTotalJugadores + "%" + rangoEdad + "%" + sEquipos;
     }
-
+    
     public String getNombre() {
         return nombre;
     }

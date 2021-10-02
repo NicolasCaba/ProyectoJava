@@ -7,13 +7,13 @@ public class Equipo {
     private String nombre;
     private int numeroTotalJugadores;
     private String categoria;
-    private String jugadores[];
+    private Jugador jugadores[];
     private String rutaDeImagen;
     private int numeroAficionados;
     private double victorias;
     private double derrotas;
 
-    public Equipo(String nombre, int numeroTotalJugadores, String categoria, String[] jugadores, String rutaDeImagen, int numeroAficionados, double victorias, double derrotas) {
+    public Equipo(String nombre, int numeroTotalJugadores, String categoria, Jugador[] jugadores, String rutaDeImagen, int numeroAficionados, double victorias, double derrotas) {
         this.nombre = nombre;
         this.numeroTotalJugadores = numeroTotalJugadores;
         this.categoria = categoria;
@@ -26,7 +26,15 @@ public class Equipo {
 
     @Override
     public String toString() {
-        return "Equipo{" + "nombre=" + nombre + ", numeroTotalJugadores=" + numeroTotalJugadores + ", categoria=" + categoria + ", jugadores=" + jugadores + ", rutaDeImagen=" + rutaDeImagen + ", numeroAficionados=" + numeroAficionados + ", victorias=" + victorias + ", derrotas=" + derrotas + '}';
+        String sJugadores = "$";
+        for(Jugador j: jugadores){
+            if(j != null){
+                sJugadores += j.toString() + "/";
+            }
+        }
+        sJugadores += "$";
+        
+        return nombre + "%" + numeroTotalJugadores + "%" + categoria + "%"  + sJugadores + "%" + rutaDeImagen + "%" + numeroAficionados + "%" + victorias + "%" + derrotas;
     }
 
     public String getNombre() {
@@ -53,11 +61,11 @@ public class Equipo {
         this.categoria = categoria;
     }
 
-    public String[] getJugadores() {
+    public Jugador[] getJugadores() {
         return jugadores;
     }
 
-    public void setJugadores(String[] jugadores) {
+    public void setJugadores(Jugador[] jugadores) {
         this.jugadores = jugadores;
     }
 
