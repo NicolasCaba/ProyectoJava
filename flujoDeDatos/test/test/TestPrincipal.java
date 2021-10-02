@@ -2,6 +2,8 @@ package test;
 
 import entidades.Equipo;
 import entidades.Jugador;
+import java.util.ArrayList;
+import java.util.Arrays;
 import manejo_archivos.Archivo;
 
 /**
@@ -16,8 +18,17 @@ public class TestPrincipal {
         Equipo equipo1;
         equipo1 = new Equipo("Tigres", 8, "Juvenil", jugadoresEquipo1, "imagen1.jpg", 12, 2, 1);
         
+        ArrayList<Object> arrlist;
+        
         Archivo archivo = new Archivo();
         archivo.guardarEnArchivo(equipo1, "BaseDeDatosLocal\\Equipos.txt");
-        archivo.leerArchivo("BaseDeDatosLocal\\Equipos.txt");
+        arrlist = archivo.leerArchivo("BaseDeDatosLocal\\Equipos.txt");
+        Equipo equipoEntrada;
+        
+        for(Object o: arrlist){
+            equipoEntrada = (Equipo)o;
+            System.out.println(Arrays.toString(equipoEntrada.getJugadores()));
+        }
+       
     }
 }

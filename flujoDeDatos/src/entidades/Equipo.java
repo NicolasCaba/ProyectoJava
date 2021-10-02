@@ -1,6 +1,7 @@
 package entidades;
 
 import java.io.Serializable;
+import java.util.Arrays;
 
 /**
  * @author Nicolás
@@ -14,6 +15,10 @@ public class Equipo implements Serializable {
     private int numeroAficionados;
     private double victorias;
     private double derrotas;
+    
+    public Equipo(){
+        
+    }
 
     public Equipo(String nombre, int numeroTotalJugadores, String categoria, Jugador[] jugadores, String rutaDeImagen, int numeroAficionados, double victorias, double derrotas) {
         this.nombre = nombre;
@@ -28,7 +33,7 @@ public class Equipo implements Serializable {
 
     @Override
     public String toString() {
-        return "Equipo{" + "nombre=" + nombre + ", numeroTotalJugadores=" + numeroTotalJugadores + ", categoria=" + categoria + ", jugadores=" + jugadores + ", rutaDeImagen=" + rutaDeImagen + ", numeroAficionados=" + numeroAficionados + ", victorias=" + victorias + ", derrotas=" + derrotas + '}';
+        return "Equipo{" + "nombre=" + nombre + ", numeroTotalJugadores=" + numeroTotalJugadores + ", categoria=" + categoria + ", jugadores=" + Arrays.toString(jugadores) + ", rutaDeImagen=" + rutaDeImagen + ", numeroAficionados=" + numeroAficionados + ", victorias=" + victorias + ", derrotas=" + derrotas + '}';
     }
     
     public String getNombre() {

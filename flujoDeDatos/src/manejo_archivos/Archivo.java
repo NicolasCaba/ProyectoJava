@@ -1,22 +1,23 @@
 package manejo_archivos;
 
+import entidades.CategoriaJuvenil;
+import entidades.CategoriaMayores;
+import entidades.Equipo;
+import entidades.Jugador;
+import entidades.Torneo;
 import utilidades.MiObjectOutputStream;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
+
 import java.io.EOFException;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.FileReader;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.util.Arrays;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.util.ArrayList;
+
 
 /**
  * @author Nicolás
@@ -47,51 +48,28 @@ public class Archivo {
                 e.printStackTrace();
             }
         }
-        
-        
-        /*try {
-            File archivo = new File(rutaArchivo);
-            FileWriter fw;
-            BufferedWriter bw;
-        
-        boolean existe = archivo.exists();
-            
-            fw = new FileWriter(archivo, true);
-            bw = new BufferedWriter(fw);
-            
-            if(!existe){
-                String objStr = objeto.toString();
-                bw.write(objStr);
-            }else {
-                String objStr = objeto.toString();
-                bw.newLine();
-                bw.write(objStr);
-            }
-            
-            bw.close();
-            fw.close();
-        } catch (FileNotFoundException ex) {
-            System.out.println(Arrays.toString(ex.getStackTrace()));
-        } catch (IOException ex) {
-            System.out.println(Arrays.toString(ex.getStackTrace()));
-        }*/
     }
     
     
-    public void leerArchivo(String rutaArchivo){
+    public ArrayList<Object> leerArchivo(String rutaArchivo){
         //File archivo = new File(nombreArchivo);
         FileInputStream ficheroEntrada;
         ObjectInputStream ois = null;
+        ArrayList<Object> arrlist = null;
         
         try {
             ficheroEntrada = new FileInputStream(rutaArchivo);
             ois = new ObjectInputStream(ficheroEntrada);
             Object aux = ois.readObject();
+            arrlist = new ArrayList<Object>();
             
             while(aux != null){  
                     System.out.println(aux);
+                    arrlist.add(aux);
                 aux = ois.readObject();
             }
+            
+            return arrlist;
         } catch (EOFException e) {
             System.out.println("Fin del archivo");
         } catch (IOException | ClassNotFoundException e) {
@@ -106,28 +84,6 @@ public class Archivo {
             }
             
         }
-        
-        
-        /*try {
-            File archivo = new File(rutaArchivo);
-            FileReader fr;
-            BufferedReader br;
-            
-            boolean existe = archivo.exists();
-            
-            if(existe){
-                fr = new FileReader(archivo);
-                br = new BufferedReader(fr);
-                
-                String linea;
-                
-                while((linea = br.readLine()) != null){
-                    
-                }
-            }else {
-                System.out.println("Arvchivo no existenete");
-            }
-        } catch (Exception e) {
-        }*/
+        return arrlist;
     }
 }
