@@ -18,5 +18,6 @@ public class TestPrincipal {
         
         Archivo archivo = new Archivo();
         archivo.guardarEnArchivo(equipo1, "BaseDeDatosLocal\\Equipos.txt");
+        archivo.leerArchivo("BaseDeDatosLocal\\Equipos.txt");
     }
 }

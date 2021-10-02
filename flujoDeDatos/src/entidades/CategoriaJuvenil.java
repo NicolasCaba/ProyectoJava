@@ -1,11 +1,12 @@
 package entidades;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  * @author Nicolás
  */
-public class CategoriaJuvenil {
+public class CategoriaJuvenil implements Serializable {
     private String nombre;
     private int numeroDeEquipos;
     private int numeroTotalJugadores;

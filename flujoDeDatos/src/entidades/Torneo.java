@@ -1,9 +1,11 @@
 package entidades;
 
+import java.io.Serializable;
+
 /**
  * @author Nicolás
  */
-public class Torneo {
+public class Torneo implements Serializable {
     private String nombre;
     private int numeroDeEquipos;
     private int numeroTotalJugadores;

@@ -1,9 +1,11 @@
 package entidades;
 
+import java.io.Serializable;
+
 /**
  * @author Nicolás
  */
-public class Jugador {
+public class Jugador implements Serializable {
     private String nombre;
     private int edad;
     private String equipoAlQuePertenece;
@@ -18,7 +20,7 @@ public class Jugador {
 
     @Override
     public String toString() {
-        return nombre + "%" + edad + "%" + equipoAlQuePertenece + "%" + categoria;
+        return "Jugador{" + "nombre=" + nombre + ", edad=" + edad + ", equipoAlQuePertenece=" + equipoAlQuePertenece + ", categoria=" + categoria + '}';
     }
 
     public String getNombre() {
