@@ -20,16 +20,20 @@ public class Vista extends javax.swing.JFrame {
      */
     public Vista() {
         initComponents();
+        mostrarDatos();
     }
     
     private void mostrarDatos(){
+        //Datos Torneo
         ArrayList<Object> arrTorneo;
-        arrTorneo = Archivo.leerArchivo("BaseDeDatosLocal\\Equipos.txt");
+        arrTorneo = Archivo.leerArchivo("BaseDeDatosLocal\\Torneo.txt");
         Torneo torneo = null;
         for(Object o: arrTorneo){
             torneo = (Torneo)o;
         }
         nombreTorneo.setText(torneo.getNombre());
+        numeroDeEquiposTorneo.setText(Integer.toString(torneo.getNumeroDeEquipos()));
+        numeroTotalJugadoresTorneo.setText(Integer.toString(torneo.getNumeroTotalJugadores()));
         
     }
 
