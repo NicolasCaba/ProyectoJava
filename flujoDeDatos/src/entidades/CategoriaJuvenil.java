@@ -23,13 +23,7 @@ public class CategoriaJuvenil implements Serializable {
 
     @Override
     public String toString() {
-        String sEquipos = "$";
-        for(Equipo e: equipos){
-            sEquipos += e.getNombre() + "/";
-        }
-        sEquipos += "$";
-        
-        return nombre + "%" + numeroDeEquipos + "%" + numeroTotalJugadores + "%" + rangoEdad + "%" + sEquipos;
+        return "CategoriaJuvenil{" + "nombre=" + nombre + ", numeroDeEquipos=" + numeroDeEquipos + ", numeroTotalJugadores=" + numeroTotalJugadores + ", rangoEdad=" + rangoEdad + ", equipos=" + equipos + '}';
     }
     
     public String getNombre() {

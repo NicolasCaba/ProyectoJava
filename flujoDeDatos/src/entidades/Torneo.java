@@ -22,7 +22,7 @@ public class Torneo implements Serializable {
 
     @Override
     public String toString() {
-        return nombre + "%" + numeroDeEquipos + "%" + numeroTotalJugadores + "%" + categoriaJuvenil.getNombre() + "%" + categoriaMayores.getNombre();
+        return "Torneo{" + "nombre=" + nombre + ", numeroDeEquipos=" + numeroDeEquipos + ", numeroTotalJugadores=" + numeroTotalJugadores + ", categoriaJuvenil=" + categoriaJuvenil + ", categoriaMayores=" + categoriaMayores + '}';
     }
 
     public String getNombre() {

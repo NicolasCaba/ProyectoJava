@@ -1,10 +1,5 @@
 package manejo_archivos;
 
-import entidades.CategoriaJuvenil;
-import entidades.CategoriaMayores;
-import entidades.Equipo;
-import entidades.Jugador;
-import entidades.Torneo;
 import utilidades.MiObjectOutputStream;
 
 
@@ -23,7 +18,7 @@ import java.util.ArrayList;
  * @author Nicolás
  */
 public class Archivo {
-    public void guardarEnArchivo(Object objeto, String rutaArchivo){
+    public static void guardarEnArchivo(Object objeto, String rutaArchivo){
         File archivo = new File(rutaArchivo);
         FileOutputStream fichero = null;  
         
@@ -51,7 +46,7 @@ public class Archivo {
     }
     
     
-    public ArrayList<Object> leerArchivo(String rutaArchivo){
+    public static ArrayList<Object> leerArchivo(String rutaArchivo){
         //File archivo = new File(nombreArchivo);
         FileInputStream ficheroEntrada;
         ObjectInputStream ois = null;
