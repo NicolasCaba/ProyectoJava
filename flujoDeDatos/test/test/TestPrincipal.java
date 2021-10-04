@@ -6,6 +6,7 @@ import entidades.Equipo;
 import entidades.Jugador;
 import java.util.ArrayList;
 import java.util.Arrays;
+import main.IntroduccionDatosBD;
 import manejo_archivos.Archivo;
 
 /**
@@ -42,15 +43,17 @@ public class TestPrincipal {
         
         ArrayList<Object> arrlist;
         
-        Archivo archivo = new Archivo();
-        archivo.guardarEnArchivo(equipo1, "BaseDeDatosLocal\\Equipos.txt");
-        arrlist = archivo.leerArchivo("BaseDeDatosLocal\\Equipos.txt");
-        Equipo equipoEntrada;
+       // Archivo archivo = new Archivo();
+        //archivo.guardarEnArchivo(equipo1, "BaseDeDatosLocal\\Equipos.txt");
+        //arrlist = archivo.leerArchivo("BaseDeDatosLocal\\Equipos.txt");
+        //Equipo equipoEntrada;
         
-        for(Object o: arrlist){
+        /*for(Object o: arrlist){
             equipoEntrada = (Equipo)o;
             System.out.println(equipoEntrada);
-        }
+        }*/
+        
+        IntroduccionDatosBD.introduccionDatos();
        
     }
 }

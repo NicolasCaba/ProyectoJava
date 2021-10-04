@@ -13,14 +13,14 @@ public class Equipo implements Serializable {
     private Jugador jugadores[];
     private String rutaDeImagen;
     private int numeroAficionados;
-    private double victorias;
-    private double derrotas;
+    private float victorias;
+    private float derrotas;
     
     public Equipo(){
         
     }
 
-    public Equipo(String nombre, int numeroTotalJugadores, String categoria, Jugador[] jugadores, String rutaDeImagen, int numeroAficionados, double victorias, double derrotas) {
+    public Equipo(String nombre, int numeroTotalJugadores, String categoria, Jugador[] jugadores, String rutaDeImagen, int numeroAficionados, float victorias, float derrotas) {
         this.nombre = nombre;
         this.numeroTotalJugadores = numeroTotalJugadores;
         this.categoria = categoria;
@@ -88,7 +88,7 @@ public class Equipo implements Serializable {
         return victorias;
     }
 
-    public void setVictorias(double victorias) {
+    public void setVictorias(float victorias) {
         this.victorias = victorias;
     }
 
@@ -96,7 +96,7 @@ public class Equipo implements Serializable {
         return derrotas;
     }
 
-    public void setDerrotas(double derrotas) {
+    public void setDerrotas(float derrotas) {
         this.derrotas = derrotas;
     }
 }

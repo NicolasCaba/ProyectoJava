@@ -1,7 +1,6 @@
 package conexion;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
+import java.sql.*;
 
 /**
  *
@@ -15,16 +14,18 @@ public class ConexionBD {
     
     
     Connection con = null;
-    public ConexionBD(){
+    public Connection conexionBD(){
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             con = DriverManager.getConnection(url, usuario, password);
             
             if(con != null){
                 System.out.println("Conexion correcta");
+                return con;
             }
         } catch (Exception e) {
             System.out.println(e);
         }
+        return con;
     }
 }
